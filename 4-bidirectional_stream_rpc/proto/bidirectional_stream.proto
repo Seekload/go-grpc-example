@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+// 定义流式请求信息
+message StreamRequest{
+  // 参数类型 参数名称 标识号
+  string data = 1;
+}
+
+// 定义流响应信息
+message StreamResponse{
+  int32 code = 1;
+  string value = 2;
+}
+
+// 定义我们的服务(可以定义多个服务，每个服务可以定义多个接口)
+service StreamService{
+  // 双向流RPC，需要在请求、响应数据前加stream
+  rpc Record(stream StreamRequest) returns (stream StreamResponse){};
+}
