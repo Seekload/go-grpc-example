@@ -1,0 +1,23 @@
+[ req ]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+
+[ dn ]
+C = CN
+ST = ZheJiang
+L = Hangzhou
+O = Seekload Ltd.
+OU = Information Technologies
+emailAddress = email@email.com
+CN = localhost
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = localhost
+DNS.2 = seekload.net
+DNS.3 = www.seekload.net
